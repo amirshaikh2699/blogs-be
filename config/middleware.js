@@ -3,6 +3,7 @@ const logSymbols = require("log-symbols");
 const express = require("express");
 const logger = require("morgan");
 const path = require("path");
+const bodyParser = require('body-parser');
 
 const initMiddleware = (app) => {
   console.log("Initializing Middleware", logSymbols.info);
@@ -14,7 +15,9 @@ const initMiddleware = (app) => {
   // Parsing data
   app.use(express.json());
   app.use(express.urlencoded({ extended: false }));
-
+  app.use(bodyParser.urlencoded({ extended: false }));
+  app.use(bodyParser.json())
+  
   // File upload parser
   app.use(
     fileUpload({
