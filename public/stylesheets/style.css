@@ -1,4 +1,226 @@
 :root {
   --primayBackground: #263238;
   --primaryText: #fff;
+  --blue: #007bff;
+  --indigo: #6610f2;
+  --purple: #6f42c1;
+  --pink: #e83e8c;
+  --red: #dc3545;
+  --orange: #fd7e14;
+  --yellow: #ffc107;
+  --green: #28a745;
+  --teal: #20c997;
+  --cyan: #17a2b8;
+  --white: #fff;
+  --gray: #6c757d;
+  --gray-dark: #343a40;
+  --primary: #007bff;
+  --secondary: #6c757d;
+  --success: #28a745;
+  --info: #17a2b8;
+  --warning: #ffc107;
+  --danger: #dc3545;
+  --light: #f8f9fa;
+  --dark: #343a40;
+  --breakpoint-xs: 0;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+body {
+  font-family: var(--font-family-monospace) !important;
+  margin-top: 90px !important;
+}
+
+.formMain {
+  border: 1px solid #ccc;
+  padding: 0 15px 0 15px;
+  margin-top: 15px;
+  border-radius: 6px;
+}
+
+.justCenter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.customLoader i {
+  -webkit-animation: spin 1s linear infinite;
+  -moz-animation: spin 1s linear infinite;
+  animation: spin 1s linear infinite;
+}
+
+.toastParent {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 25rem;
+  z-index: 1000;
+}
+
+.customToast {
+  background: #fff;
+  border-left: 5px solid #000;
+  border-radius: 3px;
+  box-shadow: 1px 7px 14px -5px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  margin-top: 15px;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.customToast .toastStat {
+  border-radius: 50%;
+  color: #fff;
+  font-size: 1.2rem;
+  height: 50px;
+  width: 50px;
+  background-color: #000;
+}
+
+.customToast .times {
+  font-size: 2.7rem;
+  color: #858080;
+}
+
+.customToast.warning .fa-times,
+.customToast.warning .fa-check {
+  display: none;
+}
+
+.customToast.warning {
+  border-color: var(--warning);
+}
+
+.customToast.warning .toastStat {
+  background-color: var(--warning);
+}
+
+.customToast.error .fa-check,
+.customToast.error .fa-exclamation {
+  display: none;
+}
+
+.customToast.error {
+  border-color: var(--danger);
+}
+
+.customToast.error .toastStat {
+  background-color: var(--danger);
+}
+
+.customToast.success .fa-times,
+.customToast.success .fa-exclamation {
+  display: none;
+}
+
+.customToast.success {
+  border-color: var(--success);
+}
+
+.customToast.success .toastStat {
+  background-color: var(--success);
+}
+
+.customLoader {
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.39);
+  color: #fff;
+  display: flex;
+  font-size: 5rem;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition: 0.3s;
+  z-index: 10000;
+}
+
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.navbar.main {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.cardCust {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.blogContainer {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  overflow-x: hidden;
+  margin-bottom: 20px;
+  padding: 15px 10px;
+  border-radius: 5px;
+}
+
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  height: 100%;
+}
+
+.navbar-brand {
+  letter-spacing: 5px;
+  font-family: sans-serif;
+}
+
+.createNewForm {
+  height: 68px;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.createNewForm.extend{
+  height: 100%;
+}
+
+#showHideBtn{
+  transition: 0.3s;
+}
+#showHideBtn:focus{
+  outline: none;
+  box-shadow: none;
 }
